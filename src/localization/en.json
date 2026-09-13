@@ -950,7 +950,9 @@
                     "vrc_profile_backgrounds_opacity_description": "Higher values will impact text readability.",
                     "vrc_profile_cosmetics": "Profile Cosmetics",
                     "cosmetics_description": "Shows icon frame and profile effects",
-                    "show_cosmetics": "Show Cosmetics"
+                    "show_cosmetics": "Show Cosmetics",
+                    "vrc_profile_card_opacity": "Card Opacity",
+                    "vrc_profile_card_opacity_description": "Lower values will impact text readability."
                 },
                 "display": {
                     "header": "Display"
@@ -1513,6 +1515,11 @@
             },
             "json": {
                 "header": "JSON"
+            },
+            "settings": {
+                "header": "Dialog Settings",
+                "profile_display": "Profile Display",
+                "notes_and_actions": "Notes & Actions"
             },
             "mutual_friends": {
                 "header": "Mutual Friends",

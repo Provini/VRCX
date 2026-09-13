@@ -19,6 +19,7 @@
         <div class="flex-1 min-w-0 flex flex-col min-h-0 pl-2">
             <TabsUnderline
                 v-model="userDialog.activeTab"
+                class="user-dialog-tabs"
                 :items="userDialogTabs"
                 :activeColor="userDialogTabColor"
                 :unmount-on-hide="false"
@@ -61,6 +62,10 @@
                         :dialog-id="userDialog.id"
                         :dialog-ref="userDialog.ref"
                         @refresh="refreshUserDialogTreeData()" />
+                </template>
+
+                <template #Settings>
+                    <UserDialogSettings />
                 </template>
             </TabsUnderline>
             <SendInviteDialog
@@ -114,6 +119,7 @@
     import UserDialogInfoTab from './UserDialogInfoTab.vue';
     import UserDialogMutualFriendsTab from './UserDialogMutualFriendsTab.vue';
     import UserDialogWorldsTab from './UserDialogWorldsTab.vue';
+    import UserDialogSettings from './UserDialogSettings.vue';
     import UserSummaryHeader from './UserSummaryHeader.vue';
 
     import ModerateGroupDialog from '../ModerateGroupDialog.vue';
@@ -442,5 +448,10 @@
 
     .user-dialog-scrollbars :deep(*) {
         scrollbar-color: var(--user-dialog-scrollbar-thumb) var(--user-dialog-scrollbar-track);
+    }
+
+    .user-dialog-tabs :deep(.px-3) {
+        padding-left: 11px;
+        padding-right: 11px;
     }
 </style>

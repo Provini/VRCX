@@ -117,20 +117,26 @@
         :unmount-on-hide="unmountOnHide"
         @update:modelValue="onValueChange">
         <TabsList :class="listClass" :aria-label="ariaLabel || undefined">
-            <TabsIndicator
-                class="pointer-events-none absolute left-0 bottom-0 h-0.5 w-(--reka-tabs-indicator-size) translate-x-(--reka-tabs-indicator-position) transition-[width,translate] duration-200 ease-out">
-                <div class="h-full w-full rounded-full bg-primary" :style="indicatorStyle" />
-            </TabsIndicator>
+            <div class="relative flex min-w-0 flex-1 items-center gap-1 overflow-hidden">
+                <TabsIndicator
+                    class="pointer-events-none absolute left-0 bottom-0 h-0.5 w-(--reka-tabs-indicator-size) translate-x-(--reka-tabs-indicator-position) transition-[width,translate] duration-200 ease-out">
+                    <div class="h-full w-full rounded-full bg-primary" :style="indicatorStyle" />
+                </TabsIndicator>
 
-            <TabsTrigger
-                v-for="it in itemsList"
-                :key="it.value"
-                :value="it.value"
-                :disabled="it.disabled"
-                :class="triggerClass"
-                :style="innerValue === it.value ? triggerStyle : undefined">
-                <slot :name="`label-${it.value}`">{{ it.label }}</slot>
-            </TabsTrigger>
+                <TabsTrigger
+                    v-for="it in itemsList"
+                    :key="it.value"
+                    :value="it.value"
+                    :disabled="it.disabled"
+                    :class="triggerClass"
+                    :style="innerValue === it.value ? triggerStyle : undefined">
+                    <slot :name="`label-${it.value}`">{{ it.label }}</slot>
+                </TabsTrigger>
+            </div>
+
+            <div v-if="$slots.Settings" class="ml-auto flex shrink-0 items-center pr-1">
+                <slot name="Settings" />
+            </div>
         </TabsList>
 
         <TabsContent

@@ -154,6 +154,25 @@
             </template>
 
             <SettingsItem
+                :label="t('view.settings.appearance.appearance.vrc_profile_card_opacity')"
+                :description="t('view.settings.appearance.appearance.vrc_profile_card_opacity_description')">
+                <NumberField
+                    v-model="profileCardOpacity"
+                    :step="0.1"
+                    :min="0"
+                    :max="1"
+                    :format-options="{ maximumFractionDigits: 2 }"
+                    class="w-32"
+                    @update:modelValue="setProfileCardOpacity">
+                    <NumberFieldContent>
+                        <NumberFieldDecrement />
+                        <NumberFieldInput />
+                        <NumberFieldIncrement />
+                    </NumberFieldContent>
+                </NumberField>
+            </SettingsItem>
+
+            <SettingsItem
                 :label="t('view.settings.appearance.appearance.vrc_profile_cosmetics')"
                 :description="t('view.settings.appearance.appearance.cosmetics_description')">
                 <Switch
@@ -504,6 +523,7 @@
         displayVRCProfileThemes,
         displayVRCProfileBackgrounds,
         profileBackgroundOpacity,
+        profileCardOpacity,
         displayVRCProfileCosmetics,
         appFontFamily,
         customFontFamily,
@@ -535,6 +555,7 @@
         setDisplayVRCProfileThemes,
         setDisplayVRCProfileBackgrounds,
         setProfileBackgroundOpacity,
+        setProfileCardOpacity,
         setDisplayVRCProfileCosmetics,
         setHideNicknames,
         setShowInstanceIdInLocation,
