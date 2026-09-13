@@ -1,6 +1,6 @@
 <template>
     <div class="x-container flex w-full flex-col">
-        <div class="mx-auto flex w-full max-w-2xl flex-col">
+        <div class="mx-auto flex w-full max-w-3xl flex-col">
             <div class="shrink-0 p-1.5">
                 <span class="text-lg font-semibold text-foreground">{{ t('view.settings.header') }}</span>
             </div>
