@@ -451,7 +451,7 @@
     }
 
     .user-dialog-tabs :deep(.px-3) {
-        padding-left: 11px;
-        padding-right: 11px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 </style>

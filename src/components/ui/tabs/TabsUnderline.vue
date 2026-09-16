@@ -130,7 +130,9 @@
                     :disabled="it.disabled"
                     :class="triggerClass"
                     :style="innerValue === it.value ? triggerStyle : undefined">
-                    <slot :name="`label-${it.value}`">{{ it.label }}</slot>
+                    <div class="whitespace-nowrap">
+                        <slot :name="`label-${it.value}`">{{ it.label }}</slot>
+                    </div>
                 </TabsTrigger>
             </div>
 
